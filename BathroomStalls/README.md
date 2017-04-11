@@ -20,17 +20,18 @@ Output
 
 For each test case, output one line containing Case #x: y z, where x is the test case number (starting from 1), y is max(LS, RS), and z is min(LS, RS) as calculated by the last person to enter the bathroom for their chosen stall S.
 
-Input | Output
-------|-------
-5|
-4 2 | Case #1: 1 0
-5 2 | Case #2: 1 0
-6 2 | Case #3: 1 1
-1000 1000 | Case #4: 0 0
-1000 1 | Case #5: 500 499
+```
+Input			Output
+5
+4 2				Case #1: 1 0
+5 2				Case #2: 1 0
+6 2				Case #3: 1 1
+1000 1000		Case #4: 0 0
+1000 1			Case #5: 500 499
+```
 
 # Solution
 
-First off we have just one space of size N. In each step we will take the largest size of any space and break it into two parts. `size/2` and `(size-1)/2`. The trick that will lead us to a speedy solution is that we don't have to break the spaces one by one, but we can break all the spaces of the same sizes together. Starting off, each space occurs only once, but a few steps down the recursion we find exponentially many occurences. Because each time we spawn smaller spaces, all we have to do is check the end of our `deque` and if it's the same space, just add otherwise insert a new record. When we have assigned all K people, we can returns `size/2` as max and `(size-1)/2` as min
+First off there is just one space of size *N*. In each step the largest size of any space will break into two parts. `size/2` and `(size-1)/2`. The trick that will lead to a speedy solution is there is no reason to break the spaces one by one, but  spaces of the same sizes can be broken together. Starting off, each space occurs only once, but a few steps down the recursion there will be exponentially many occurences. Because each time smaller spaces are spawned, all there is to do is check the end of our `deque` and if it's the same space, just add to the record otherwise insert a new one. When all K people have been assigned, return `size/2` as max and `(size-1)/2` as min
 
-The complexity of our solution is log(N) at the worst, since the counts of our spaces are growing exponentially. Someone probably has a better reasoning than that.
+The complexity of this solution is O(log*N*) at the worst, since the counts of the spaces are growing exponentially. Someone probably has a better reasoning than that.
