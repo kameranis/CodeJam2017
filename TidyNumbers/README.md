@@ -12,19 +12,20 @@ Output
 
 For each test case, output one line containing Case #x: y, where x is the test case number (starting from 1) and y is the last tidy number counted by Tatiana.
 
-Input | Output
-------|-------
-4 |
-132 | Case #1: 129
-1000 | Case #2: 999
-7 | Case #3: 7
-111111111111111110 | Case #4: 99999999999999999
+```
+Input					Output
+4						
+132						Case #1: 129
+1000					Case #2: 999
+7						Case #3: 7
+111111111111111110		Case #4: 99999999999999999
+```
 
 # Solution
 
-Starting from left to right, if the current digit is larger than the previous one, then commit all the previous numbers to your solution. If it is the same as the previous one, then add it to a temporary solution. If it is smaller than the previous one, then first commit to your solution the digit you have in the temporary solution minus one and the rest of the digits are '9'. Special care should be taken in cases like #4, where the initial 1 becomes 0 and needs to be eliminated.
-}
+Starting from left to right, if the current digit is larger than the previous one, then commit all the previous numbers to your solution. If it is the same as the previous one, then add it to a temporary solution. If it is smaller than the previous one, then first commit to your solution the digit you have in the temporary solution minus one and the rest of the digits are `9`. Special care should be taken in cases like #4, where the initial `1` becomes `0` and needs to be eliminated.
 
-Other people have submitted solutions starting reversely from the end. Both solutions work well.
+Other people have submitted solutions starting reversely from the end. Both approaches work well.
 
-The complexity of this solution is O(logN), since we greedily decide for each digit without checking any other.
+The complexity of this solution is O(log*N*), since we greedily decide for each digit without checking any other.
+
