@@ -18,15 +18,15 @@ Output
 
 For each test case, output one line containing Case #x: y, where x is the test case number (starting from 1) and y is either IMPOSSIBLE if there is no way to get all the pancakes happy side up, or an integer representing the the minimum number of times you will need to use the oversized pancake flipper to do it.
 
+```
+Input			Output
+3				Case #1: 3
+---+-++- 3		Case #2: 0
++++++ 4			Case #3: IMPOSSIBLE
+-+-+- 4		
+```
 
-Input | Output
-------|-------
-3 | 
----+-++- 3 | Case #1: 3
-+++++ 4 | Case #2: 0
--+-+- 4 | Case #3: IMPOSSIBLE
-
-In Case #1, you can get all the pancakes happy side up by first flipping the leftmost 3 pancakes, getting to ++++-++-, then the rightmost 3, getting to ++++---+, and finally the 3 pancakes that remain blank side up. There are other ways to do it with 3 flips or more, but none with fewer than 3 flips.
+In Case #1, you can get all the pancakes happy side up by first flipping the leftmost 3 pancakes, getting to `++++-++-`, then the rightmost 3, getting to `++++---+`, and finally the 3 pancakes that remain blank side up. There are other ways to do it with 3 flips or more, but none with fewer than 3 flips.
 
 In Case #2, all of the pancakes are already happy side up, so there is no need to flip any of them.
 
@@ -44,5 +44,4 @@ while there are more than K pancakes
 		move one.
 if there is an unflipped pancake then there is no solution.
 ```
-The complexity of this solution is O( K(S-K) ). The worst case scenario occurs when K=S/2 and the string alternates between + and - (eg -+-+-+...). In this case, the complexity is O(S^2/4)=O(S^2). However, since the maximum pancakes are S=1000, this is easily computed in milliseconds.
-
+The complexity of this solution is O(*K(S-K)*). The worst case scenario occurs when K=S/2 and the string alternates between `+` and `-` (eg `-+-+-+`). In this case, the complexity is O(*S^2/4*)=O(*S^2*). However, since the maximum pancakes are `S=1000`, this is easily computed in milliseconds.
