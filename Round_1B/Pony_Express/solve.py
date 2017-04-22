@@ -68,7 +68,6 @@ def create_graph(N, dists, horses):
 
 def solve():
     N, Q = [int(i) for i in raw_input().split()]
-    print N, Q
     horses = [[int(i) for i in raw_input().split()] for j in xrange(N)]
     dists = [[int(i) for i in raw_input().split()] for j in xrange(N)]
     queries = [[int(i) for i in raw_input().split()] for j in xrange(Q)]
@@ -85,7 +84,7 @@ def main():
     T = int(raw_input())
     for i in xrange(T):
         sol = solve()
-        #print 'Case #{}: {}'.format(i+1, sol)
+        print 'Case #{}: {}'.format(i+1, sol)
 
 
 if __name__ == '__main__':
